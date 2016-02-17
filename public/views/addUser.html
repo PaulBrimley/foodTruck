@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="truckApp">
+<head>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="http://www.parsecdn.com/js/parse-1.6.12.min.js"></script>
+
+</head>
+<body ng-controller="addUser">
+
+	<form id="myForm" method="POST" ng-submit="addUser(userNameHolder, userPasswordHolder)">
+		<p>Username: <input id="field_username" title="Username must not be blank and in email format (user@email.com)." type="email" required name="username" ng-model="userNameHolder"></p>
+		<p>Password: <input id="field_pwd1" title="Password must contain at least 6 characters, including UPPER/lowercase and numbers." type="password" required pattern="(?=.*\d)(?=.*[a-z]).{6,}" name="pwd1"></p>
+		<p>Confirm Password: <input id="field_pwd2" title="Please enter the same Password as above." type="password" required pattern="(?=.*\d)(?=.*[a-z]).{6,}" name="pwd2" ng-model="userPasswordHolder"></p>
+		<p><input type="submit" value="Submit"></p>
+	</form>
+
+	{{tester}}
+
+	<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.19.min.js"></script>
+	<script src="js/angular.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/addUser.js"></script>
+	<script src="js/userService.js"></script>
+	<script src="js/defaultHeaders.js"></script>
+</body>
+</html>

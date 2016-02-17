@@ -1,0 +1,131 @@
+
+<div class="sideContainer1">
+	<div class="sortOptions">
+		<div class="truckProfile">
+			<h4>Add and Remove Specials</h4>
+			<h4>{{message}}</h4>
+			<form name="truckSpecials" ng-submit="addSpecial(newSpecial)">
+				<table>
+					<tr>
+						<td>New Special:</td>
+						<td><input ng-model="newSpecial.special" type="text" placeholder="Special..." required></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><button type="submit">Submit</button></td>
+					</tr>
+					<tr></tr>
+				</table>
+			</form>
+			<h4>Current Specials:</h4>
+		</div>
+	</div>
+	<div class="sideContainerLabelHolder" ng-click="seeSideCont1()">
+		<div class="sideContainerLabel">Add &amp Remove Specials</div>
+	</div>
+	<span class="menu1" ng-click="seeSideCont1()"><img src="../images/menu-icon-grey.png"></span>
+	<div class="truckContainer">
+		<div class="truckProfile" style="padding-bottom: 200px">
+			<table>
+				<tr ng-repeat="special in foodTruck.specials">
+					<td style="text-align: center">{{special.special}}</td>
+					<td style="text-align: left"><button style="width: 100px" ng-click="removeSpecial(special)">Remove Special</button></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+<div class="sideContainer2">
+	<div class="sortOptions">
+		<div class="truckProfile">
+			<h4>Add and Remove Menu Items</h4>
+			<h4>{{message}}</h4>
+			<form name="truckProfile"  style="margin-left: 10%;" ng-submit="addMenuItem(newMenuItem)">
+				<table>
+					<tr>
+						<td>New Menu Item:</td>
+						<td><input ng-model="newMenuItem.item" type="text" placeholder="Menu Item..." required></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><button type="submit">Submit</button></td>
+					</tr>
+					<tr></tr>
+				</table>
+			</form>
+			<h4>Current Menu Items:</h4>
+		</div>
+	</div>
+	<div class="sideContainerLabelHolder" ng-click="seeSideCont2()">
+		<div class="sideContainerLabel">Edit Menu</div>
+	</div>
+	<span class="menu1" ng-click="seeSideCont2()"><img src="../images/menu-icon-grey.png"></span>
+	<div class="truckContainer">
+		<div class="truckProfile" style="padding-bottom: 200px">
+			<table>
+				<tr ng-repeat="item in foodTruck.menu track by $index">
+					<td style="text-align: center">{{item}}</td>
+					<td style="text-align: left"><button style="width: 100px" ng-click="removeMenuItem(item)">Remove Item</button></td>
+				</tr>
+			</table>
+		</div>
+	</div>
+</div>
+<div class="sideContainer3">
+	<div class="sortOptions">
+		<div>Your truck is currently:</div>
+		<div><strong>{{enabledDisabled}}</strong></div>
+		<form  ng-show="foodTruck.online" ng-submit="goOffline(salesAtThisLocation)">
+			<div>Sales: <input type="number" min="0" step=".01" ng-model="salesAtThisLocation" placeholder="Input Sales When Done..." required></div>
+			<button type="submit">Go Offline</button>
+			<span>&nbsp&nbsp</span>
+			<span>You are online</span>
+		</form>
+		<form>
+			<button id="onlineButton" ng-click="goOnline()" ng-hide="foodTruck.online" disabled>Go Online</button>
+			<span ng-hide="foodTruck.online">You are offline</span>
+		</form>
+	</div>
+	<br/>
+	<div class="sideContainerLabelHolder" ng-click="seeSideCont3()">
+		<div class="sideContainerLabel">Edit Truck Profile</div>
+	</div>
+	<span class="menu1" ng-click="seeSideCont3()"><img src="../images/menu-icon-grey.png"></span>
+	<div class="truckContainer">
+		<div class="truckProfile">
+			<form style="margin-left: 7%" name="truckProfile" ng-submit="updateFoodTruckProfile(foodTruck)">
+				<table>
+					<tr>
+						<td>Truck Name</td>
+						<td><input ng-model="foodTruck.truckName" type="text" placeholder="Truck Name..." required></td>
+					</tr>
+					<tr>
+						<td>Home Base</td>
+						<td><input ng-model="foodTruck.homeBase" type="text" placeholder="Home Base..." required></td>
+					</tr>
+					<tr>
+						<td>Type of Food</td>
+						<td><input ng-model="foodTruck.typeOfFood" type="text" placeholder="Food Type..." required></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td><button type="submit">Submit</button></td>
+					</tr>
+					<tr></tr>
+				</table>
+				<h4>{{message}}</h4>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="sideContainer4">
+	<div class="directionDetails">Direction Details</div>
+	<div class="sideContainerLabelHolder" ng-click="seeSideCont4()">
+		<div class="sideContainerLabel">Route Directions</div>
+	</div>
+	<span class="menu1" ng-click="seeSideCont4()"><img src="../images/menu-icon-grey.png"></span>
+
+	<div class="truckContainer" id="routeDetails">
+		
+	</div>
+</div>

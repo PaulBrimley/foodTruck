@@ -1,0 +1,36 @@
+<div id="closer"><a ng-click="closer()" href=""><img src="images/iconClose2x.png"></a></div>
+<form ng-submit="login(user)">
+	<table id="signInForm">
+		<tr>
+			<td class="rightAlign">Sign In with Facebook:</td>
+			<td><img id="facebookIcon" src="images/facebook-icon.png"><a href="/auth/facebook"><img id="facebookLogo" src="images/facebook-logo.png"></a></td>
+		</tr>
+	</table>
+	<h3 style="text-align: center">Local Sign In</h3>
+	<table id="signInForm">
+		<tr>
+			<td class="rightAlign">User Email:</td>
+			<td><input id="signinUserNameInput" ng-model="user.email" type="email" title="Username cannot be blank." placeholder="User Email" required></input></td>
+		</tr>
+		<tr>
+			<td class="rightAlign">Password:</td>
+			<td><input type="password" ng-model="user.password" title="Password cannot be blank." placeholder="Password" required></input></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><button class="signIn" type="submit">Sign In</button></td>
+		</tr>
+		<tr>
+			<td colspan="2" style="height: 50px; text-align: right">{{errorMessage}}</td>
+			<td></td>
+		</tr>
+	</table>
+</form>
+
+<table id="signInForm">
+	<tr>
+		<td></td>
+		<td><button class="signIn" ng-click="switchToCreateAccount()">Create new account</button></td>
+	</tr>
+</table>
+

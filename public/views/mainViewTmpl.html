@@ -1,0 +1,57 @@
+
+<div class="sideContainer1">
+	<div class="sortOptions"><!-- Work on Sort Ootions if there's time --></div>
+	<div class="sideContainerLabelHolder" ng-click="seeSideCont1()">
+		<div class="sideContainerLabel">Specials</div>
+	</div>
+	<span class="menu1" ng-click="seeSideCont1()"><img src="../images/menu-icon-grey.png"></span>
+	<div class="truckContainer">
+		<div class="trucks" style="width: 60%; margin-left: auto; margin-right: auto" ng-repeat="special in specials">
+			<div class="truckName">Truck: {{special.truckName}}</div>
+			<div class="truckInfo" style="overflow: hidden">
+				{{special.special.special}}
+			</div>
+		</div>
+	</div> 
+</div>
+<div class="sideContainer2">
+	<div class="sortOptions"><!-- Work on Sort Ootions if there's time --></div>
+	<div class="sideContainerLabelHolder" ng-click="seeSideCont2()">
+		<div class="sideContainerLabel">Favorite Trucks</div>
+	</div>
+	<span class="menu1" ng-click="seeSideCont2()"><img src="../images/menu-icon-grey.png"></span>
+	<div class="truckContainer">
+		<div class="trucks" ng-repeat="truck in favoriteTrucks">
+			<div class="truckName">{{truck.truckName}}</div>
+			<div class="truckInfo">
+				<truck-info-flipper class="flip-cont"></truck-info-flipper>
+			</div>
+			<div class="addToFavs" ng-click="removeFromFavorites(truck)">Click to remove from favorites</div>
+		</div>
+	</div> 
+</div>
+<div class="sideContainer3">
+	<div class="sortOptions"><!-- Work on Sort Ootions if there's time --></div>
+	<div class="sideContainerLabelHolder" ng-click="seeSideCont3()">
+		<div class="sideContainerLabel">Online Trucks</div>
+	</div>
+	<span class="menu1" ng-click="seeSideCont3()"><img src="../images/menu-icon-grey.png"></span>
+	<div class="truckContainer">
+		<div class="trucks" ng-repeat="truck in onlineTrucks">
+			<div class="truckName">{{truck.truckName}}</div>
+			<div class="truckInfo">
+				<truck-info-flipper class="flip-cont"></truck-info-flipper>
+			</div>
+			<div class="addToFavs" ng-click="addToFavorites(truck)">Click to add to favorites</div>
+		</div>
+	</div> 
+</div>
+<div class="sideContainer4">
+	<div class="directionDetails">Direction Details<br/><small style="font-weight: normal">(Click "Get Directions" on a truck to display directions.)</small></div>
+	<div class="sideContainerLabelHolder2" ng-click="seeSideCont4()">
+		<div class="sideContainerLabel">Route Directions</div>
+	</div>
+	<span class="menu1" ng-click="seeSideCont4()"><img src="../images/menu-icon-grey.png"></span>
+	<div class="truckContainer2" id="routeDetails">
+	</div>
+</div>

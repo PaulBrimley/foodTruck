@@ -1,0 +1,23 @@
+
+<div class="flexFront">
+	<div class="truckPicture"  style="background: url({{truck.picture}}) no-repeat; background-size: contain"></div>
+	<div class="otherInfoFront">
+		<div class="foodType"><img src="images/food-type.png">: {{truck.typeOfFood}}</div>
+		<div class="currentLocation"><img src="images/current-location.gif">: <button class="insideRightDirections" ng-click="getDirections(truck.currentLocation)">Get directions</button></div>
+		<div class="favorites"><img src="images/thumbs-up.png"> : {{truck.favorites}}</div>
+	</div>	
+	<div class="rotatedInfo" ng-click="rotateToBack()"><div class="moreInfo">More Info</div></div>
+</div>
+<div class="flexBack">
+	<div class="otherInfoBack">
+		<div class="homeBase">Home Base: {{truck.homeBase}}</div>
+		<div class="truckMenu">
+			<span>Menu:</span><br/>
+			<ul>
+				<li ng-repeat="item in truck.menu track by $index">{{item}}</li>
+			</ul>
+			<!-- <span>Menu:&nbsp</span><br/><span ng-repeat="item in truck.menu">{{item}},&nbsp</span> -->
+		</div>
+	</div>
+	<div class="rotatedInfo" ng-click="rotateToFront()"><div class="moreInfo">More Info</div></div>
+</div>

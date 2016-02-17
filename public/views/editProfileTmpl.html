@@ -1,0 +1,27 @@
+
+<div id="closer"><a ng-click="closer()" href=""><img src="images/iconClose2x.png"></a></div>
+<form ng-submit="updateAccount(updatedUser)">
+	<h3 style="text-align: center">Update Profile</h3>
+	<table id="signInForm">
+		<tr>
+			<td class="rightAlign">User Name:</td>
+			<td><input ng-model="updatedUser.userName" type="text" title="Username cannot be blank." placeholder="{{currentUser.userName}}" required></input></td>
+		</tr>
+		<tr>
+			<td class="rightAlign">Password:</td>
+			<td><input type="password" ng-model="updatedUser.password" title="Password cannot be blank." placeholder="Password..."></input></td>
+		</tr>
+		<tr>
+			<td class="rightAlign">Confirm Password:</td>
+			<td><input type="password" ng-model="updatedUser.confirmPassword" title="Password cannot be blank." placeholder="Confirm Password..."></input></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td><button type="submit">Update Profile</button></td>
+		</tr>
+		<tr>
+			<td colspan="2" style="height: 50px; text-align: right">{{errorMessage}}</td>
+			<td></td>
+		</tr>
+	</table>
+</form>

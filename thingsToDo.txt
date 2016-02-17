@@ -1,0 +1,30 @@
+ssh root@45.55.8.228
+
+sudo forever start index.js
+sudo forever list
+sudo forever restartall
+logout
+
+
+Hosting
+
+Admin:
+--> amazon s3 for picture
+
+
+Truck:
+--> sidecontainer4 past sales and location view with reverse geocoding
+--> don't have to enter a sale amount when going offline
+--> favorites not working? maybe live-update?
+--> not dropping marker when going offline
+
+
+Routes
+
+Socket.io
+
+User:
+--> facebook unique email
+--> Edit Profile with facebook auth
+
+Map

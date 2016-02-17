@@ -1,0 +1,134 @@
+<!-- 
+<div class="sideContainer1">
+	<div class="directionDetails">Create Truck</div>
+	<div class="sideContainerLabelHolder" ng-click="seeSideCont1()">
+		<div class="sideContainerLabel">Create Truck</div>
+	</div>
+	<span class="menu1" ng-click="seeSideCont1()"><img src="../images/menu-icon-grey.png"></span>
+	<div class="truckProfile">
+		<form style="margin-left: 10%" name="truckProfile" ng-submit="createFoodTruck(foodTruck)">
+			<table>
+				<tr>
+					<td style="text-align: right">Truck Name:</td>
+					<td><input ng-model="foodTruck.truckName" type="text" placeholder="Truck Name..." required></td>
+				</tr>
+				<tr>
+					<td style="text-align: right">User Id:</td>
+					<td><input ng-model="foodTruck.connectedUser" type="text" placeholder="User Id..." required></td>
+				</tr>
+				<tr>
+					<td style="text-align: right">Home Base</td>
+					<td><input ng-model="foodTruck.homeBase" type="text" placeholder="Home Base..." required></td>
+				</tr>
+				<tr>
+					<td style="text-align: right">Enabled:</td>
+					<td style="text-align: left"><input ng-model="foodTruck.enabled" type="checkbox" required/></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><button type="submit">Submit</button></td>
+				</tr>
+				<tr></tr>
+			</table>
+			<h4>{{message}}</h4>
+		</form>
+	</div>
+</div> -->
+<div class="sideContainer2">
+	<div class="sortOptions">
+		<div class="directionDetails">All Users</div>
+		<div>Search for user by any field:&nbsp<form><input type="text" ng-model="userSearch"></form></div>
+	</div>
+	<div class="sideContainerLabelHolder" ng-click="seeSideCont2()">
+		<div class="sideContainerLabel">All Users</div>
+	</div>
+	<span class="menu1" ng-click="seeSideCont2()"><img src="../images/menu-icon-grey.png"></span>
+	<div class="truckContainer">	
+		<div class="trucks" ng-repeat="user in allUsers | filter : userSearch : strict">
+			<div class="truckName">{{user.userName}}</div>
+			<div>User Id: {{user._id}}</div>
+			<div>
+				User Permissions: <span ng-repeat="permission in user.permissions">{{permission}} </span>
+			</div>
+			<div ng-show="user.connectedTruckRef">Connected Truck: {{user.connectedTruckRef.truckName}}</div>
+			<div>
+				<button style="width: 90px" ng-click="deleteUser(user)">Delete User</button>
+				<button ng-hide="user.connectedTruckRef" style="width: 150px" ng-click="makeNewTruck(user)">Create Truck</button>
+				<button  ng-show="user.permissions.indexOf('Admin') === -1"style="width: 150px" ng-click="makeAdmin(user._id)">Make Administrator</button>
+				<button  ng-hide="user.permissions.indexOf('Admin') === -1"style="width: 150px" ng-click="removeAdmin(user._id)">Remove Administrator</button>
+			</div>
+		</div>
+	</div> 
+</div>
+<div class="sideContainer3">
+	<div class="sortOptions">
+		<div class="directionDetails">All Trucks</div>
+		<div>Search for truck by any field:&nbsp<form><input type="text" ng-model="truckSearch"></form></div>
+	</div>
+	<div class="sideContainerLabelHolder" ng-click="seeSideCont3()">
+		<div class="sideContainerLabel">All Trucks</div>
+	</div>
+	<span class="menu1" ng-click="seeSideCont3()"><img src="../images/menu-icon-grey.png"></span>
+	<div class="truckContainer" style="height: 80%">
+		<div class="trucks" ng-repeat="truck in allTrucks | filter : truckSearch : strict">
+			<div class="truckName">{{truck.truckName}}</div>
+			<div>Truck Id: {{truck._id}}</div>
+			<div>Connected User:</div>
+			<div>- Name: {{truck.connectedUserRef.userName}}</div>
+			<div>- Id: {{truck.connectedUserRef._id}}</div>
+			<div>Enabled: {{truck.enabled}}</div>
+			<div>
+				<button style="width: 90px" ng-click="toggleDisableTruck(truck)">Enable/Disable</button>
+				<button style="width: 90px" ng-click="deleteTruck(truck)">Delete Truck</button>
+			</div>
+		</div>
+	</div> 
+</div>
+<div class="sideContainer4">
+	<div class="directionDetails">Create Truck</div>
+	<div class="sideContainerLabelHolder" ng-click="seeSideCont4()">
+		<div class="sideContainerLabel">Create Truck</div>
+	</div>
+	<span class="menu1" ng-click="seeSideCont1()"><img src="../images/menu-icon-grey.png"></span>
+	<div class="truckProfile">
+		<form style="margin-left: 10%" name="truckProfile" ng-submit="createFoodTruck(foodTruck)">
+			<table>
+				<tr>
+					<td style="text-align: right">Truck Name:</td>
+					<td><input ng-model="foodTruck.truckName" type="text" placeholder="Truck Name..." required></td>
+				</tr>
+				<tr>
+					<td style="text-align: right">Home Base:</td>
+					<td><input ng-model="foodTruck.homeBase" type="text" placeholder="Home Base..." required></td>
+				</tr>
+				<tr>
+					<td style="text-align: right">Picture:</td>
+					<td><input ng-model="foodTruck.picture" type="file" placeholder="Truck Picture..." onchange="angular.element(this).scope().imageUpload(this)" required></td>
+				</tr>
+				<tr>
+					<td style="text-align: right">User Name:</td>
+					<td><input ng-model="userNameHolder" type="text" placeholder="User Name..." required></td>
+				</tr>
+				<tr>
+					<td style="text-align: right">User Id:</td>
+					<td><input ng-model="foodTruck.connectedUserRef" type="text" placeholder="User Id..." required></td>
+				</tr>
+				<tr>
+					<td style="text-align: right">Enabled:</td>
+					<td style="text-align: left"><input ng-model="foodTruck.enabled" type="checkbox"/></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><button type="submit">Submit</button></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><a ng-click="cancelCreateTruck()" style="cursor: pointer">Cancel</a></td>
+				</tr>
+				<tr></tr>
+			</table>
+			<h4>{{message}}</h4>
+		</form>
+	</div>
+</div> 
+

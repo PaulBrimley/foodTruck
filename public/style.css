@@ -1,0 +1,1018 @@
+html, body {
+	padding: 0;
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.fullPage {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 100vw;
+	height: 100vh;
+}
+
+.foodTruckLogo {
+	position: relative;
+	top: 35px;
+	left: 42%;
+	width: 20vw;
+	height: 35vh;
+	z-index: 99999;
+}
+
+
+
+.rightAlign {
+	text-align: right;
+}
+
+.centerAlign {
+	text-align: center;
+}
+
+.modalDialog {
+	position: fixed;
+	font-family: Arial, Helvetica, sans-serif;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: rgba(0,0,0,0.5);
+	z-index: 99999;
+	transition: opacity 400ms ease-in;
+}
+
+.insideModal {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 99999;
+	transition: all 400ms ease-in;
+}
+
+.insideSignIn {
+	width: 500px;
+	height: 350px;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	margin: 10% auto;
+	background: #fff;
+	background: linear-gradient(#fff, #999);
+	box-shadow: 10px 10px 5px;
+	z-index: 99999;
+}
+
+#closer img {
+	position: absolute;
+	top: 4px;
+	right: 4px;
+	width: 20px;
+	height: 20px;
+}
+
+#signInForm {
+	table-layout: fixed;
+}
+
+#signInForm input {
+	text-align: center;
+	width: 200px;
+	height: 20px;
+}
+
+#signInForm button {
+	width: 204px;
+	height: 30px;
+	padding: 2px 5px;
+	cursor: pointer;
+	text-align: center;
+	background: linear-gradient(rgba(255,255,255,1), rgba(150,150,150,1));
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+}
+
+#facebookIcon {
+	width: auto;
+	height: 40px;
+	cursor: pointer;
+}
+
+#facebookLogo {
+	width: auto;
+	height: 45px;
+	cursor: pointer;
+}
+
+.signIn {
+	text-align: center;
+    min-width: 70px;
+    border-radius: 5px;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(128, 128, 128, 0.5));
+    /*box-shadow: 5px 5px 5px rgba(0,0,0,0.6);*/
+}
+
+.signIn:hover {
+	background: linear-gradient(#fff, #999);
+}
+
+.otherSignIn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
+
+.signIn2 {
+	text-align: center;
+	width: 150px;
+	height: 30px;
+    min-width: 70px;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+    background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(128, 128, 128, 0.5));
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+}
+
+.signIn2:hover {
+	background: linear-gradient(#fff, #999);
+}
+
+.header {
+	display: flex;
+	position: relative;
+	min-height: 50px;
+	flex: 1;
+	background: url('images/road-mtn.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+
+}
+
+.header > img {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	bottom: 0;
+	left: -50px;
+}
+
+#leftHeader{
+	display: flex;
+	align-items: center;
+	flex: 1;
+	padding-left: 10px;
+}
+
+.logo {
+	width: 70px;
+	height: 50px;
+	text-align: center;
+	margin-left: 20px; 
+    border-radius: 5px;
+    background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(128, 128, 128, 0.6));
+    box-shadow: 10px 10px 5px rgba(0,0,0,0.5);
+    z-index: 99997;
+}
+
+.insideLogo {
+	width: 100%;
+	height: 100%;
+    background: url('images/wheres-my-food-truck.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#centerHeader {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex: 4;
+}
+
+#rightHeader {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	flex: 2;
+	padding-right: 30px;
+}
+
+.menu {
+	text-align: center;
+	font-size: 1.5em;
+    cursor: pointer;
+    padding: 12px 16px;
+    border-radius: 5px;
+    margin-right: 15px;
+    background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(128, 128, 128, 0.6));
+    box-shadow: 10px 10px 5px rgba(0,0,0,0.5);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 0 10px;
+    min-width: 120px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: 0;
+    min-width: 120px;
+    background-color: white;
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px rgba(0,0,0,0.4);
+    z-index: 99999;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+    display: block;
+}
+
+.dropdown-content a:hover {
+	background: linear-gradient(#fff, #999);
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .menu {
+	background: linear-gradient(#fff, #999);
+}
+
+.userName {
+	text-align: center;
+    padding: 12px 16px;
+    font-size: 1.5em;
+    border-radius: 5px;
+    background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(128, 128, 128, 0.6));
+    z-index: 99999;
+    box-shadow: 10px 10px 5px rgba(0,0,0,0.5);
+    white-space: nowrap;
+}
+
+.dropdown:hover .userName {
+	background: linear-gradient(#fff, #999);
+}
+
+.mainContainer {
+	height: 100%;
+	display: flex;
+	position: relative;
+	flex: 7;
+	overflow: hidden;
+}
+
+.uiViewHolder.ng-enter {	
+	transition: 500ms;
+	opacity: 0;
+}
+
+.uiViewHolder.ng-enter-active {
+	opacity: 1;
+}
+
+.sideContainerHolder {
+	position: relative;
+	/*flex: 2;*/	
+	min-width: 400px;
+	overflow: hidden;
+	background: rgba(230, 230, 230, 1);
+	box-shadow: 4px 4px 4px black;
+	border-radius: 5px;
+}
+
+.sideContainer1 {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	box-sizing: border-box;
+	background: rgba(230, 230, 230, 1);
+	box-shadow: 4px 4px 4px black;
+	border-radius: 5px;
+}
+
+.sideContainer2 {
+	position: absolute;
+	left: 0;
+	width: 95%;
+	height: 100%;
+	overflow: hidden;
+	box-sizing: border-box;
+	background: rgba(230, 230, 230, 1);
+	box-shadow: 4px 4px 4px black;
+	border-radius: 5px;
+	z-index: 10;
+}
+
+.sideContainer3 {
+	position: absolute;
+	left: 0;
+	width: 90%;
+	height: 100%;
+	overflow: hidden;
+	box-sizing: border-box;
+	background: rgba(230, 230, 230, 1);
+	box-shadow: 4px 4px 4px black;
+	border-radius: 5px;
+	z-index: 20;
+}
+
+.sideContainer4 {
+	position: absolute;
+	left: -101%;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	box-sizing: border-box;
+	background: rgba(230, 230, 230, 1);
+	box-shadow: 4px 4px 4px black;
+	border-radius: 5px;
+	z-index: 30;
+}
+
+.sortOptions {
+	margin: 0 auto 10px auto;
+	padding-top: 10px;
+	text-align: center;
+	position: relative;
+	min-height: 50px;
+}
+
+.sortOptions form button {
+	height: 30px;
+	padding: 2px 5px;
+	cursor: pointer;
+	text-align: center;
+	background: linear-gradient(rgba(255,255,255,1), rgba(150,150,150,1));
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+}
+
+.sortOptions form input {
+	text-align: center;
+	width: 200px;
+	height: 20px;
+}
+
+.menu1 {
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	top: 3px;
+	right: 3px;
+}
+
+.menu1 img {
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+}
+
+.sideContainerLabelHolder {
+	position: absolute;
+	top: -10px;
+	right: -2px;
+	width: 5%;
+	height: 100%;
+	cursor: pointer;
+}
+
+.sideContainerLabelHolder2 {
+	position: absolute;
+	top: -10px;
+	right: -2px;
+	width: 5%;
+	height: 100%;
+	cursor: pointer;
+	z-index: 30;
+}
+
+.sideContainerLabel {
+	position: absolute;
+	font-size: 1.4em;
+	width: 40px;
+	top: 80%;
+	right: -9px;
+	transform: rotate(-90deg);
+	white-space: nowrap;
+}
+
+.truckContainer {
+	width: 105%;
+	height: 60vh;
+	overflow-y: scroll;
+}
+
+.truckContainer2 {
+	position: relative;
+	margin: 10px;
+	width: 92%;
+	height: 95%;
+	overflow-y: auto;
+}
+
+.directionDetails {
+	margin: 10px;
+	font-size: 20px;
+	text-align: center;
+	font-weight: bold;
+}
+
+.directionInstructions {
+	display: flex;
+	align-items: center;
+	text-align: center;
+	position: absolute;
+	top: 10%;
+	right: 20%;
+	bottom: 30%;
+	left: 20%;
+}
+
+.trucks {
+	margin: 0 10% 2% 8%;
+	padding: 5px;
+	background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(128, 128, 128, 0.8));
+	perspective: 100px;
+	box-sizing: border-box;
+	border-radius: 5px;
+	box-shadow: 10px 10px 5px rgba(0,0,0,0.5);
+}
+
+.trucks button {
+	
+}
+
+.truckName {
+	min-height: 25px;
+	text-align: center;
+	font-size: 19px;
+	text-decoration: underline;
+	padding-left: 9px;
+}
+
+.truckInfo {
+	display: flex;
+	position: relative;
+	perspective: 1000px;
+	min-height: 110px;
+	margin-top: 3px;
+	margin-bottom: 5px;
+}
+
+.flip-cont {
+	flex: 1;
+	transition: 0.6s;
+    transform-style: preserve-3d;
+}
+
+.flexFront, .flexBack {
+	display: flex;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 10px;
+    backface-visibility: hidden;
+    background: linear-gradient(rgba(255, 255, 255, 0.7), rgba(150, 150, 150, 0.7));
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+}
+
+.flexFront {
+    z-index: 2;
+}
+
+.flexBack {
+    transform: rotateY(180deg);
+}
+
+.otherInfoFront {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	position: relative;
+	margin-left: 5px; 
+	flex: 6;
+}
+
+.truckPicture {
+	flex: 6;
+	background-size: 100% auto;
+	background-position: center;
+}
+
+.rotatedInfo {
+	position: absolute;
+	right: 50px;
+	top: 40px;
+	cursor: pointer;
+}
+
+.moreInfo {
+	position: absolute;
+	top: 32%;
+	left: -65%;
+	width: 80px;
+	transform: rotate(-90deg);
+}
+
+.foodType {
+	position: relative;
+}
+
+.foodType img {
+	position: relative;
+	top: 3px;
+	width: 15px;
+	height: 20px;
+}
+
+.currentLocation {
+	margin: 5px 0;
+}
+
+.currentLocation img {
+	position: relative;
+	top: 3px;
+	width: 15px;
+	height: 20px;
+}
+
+.getDirections {
+	margin: 2px 0;
+	display: flex;
+	justify-content: center;
+}
+
+.leftDirections {
+	flex: 1;
+}
+
+.rightDirections {
+	flex: 4;
+}
+
+.insideRightDirections {
+	padding: 5px;
+	cursor: pointer;
+	text-align: center;
+	background: linear-gradient(rgba(255,255,255,1), rgba(150,150,150,1));
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+}
+
+.favorites {
+	min-height: 25px;
+}
+
+.favorites img {
+	width: 20px;
+	height: 18px;
+}
+
+.addToFavs {
+	text-align: center;
+	cursor: pointer;
+}
+
+.otherInfoBack {
+	width: 90%;
+	margin-left: 5px; 
+	overflow-y: auto;
+}
+
+.homeBase {
+	position: relative;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.homeBase img {
+	position: relative;
+	top: 3px;
+	width: 20px;
+	height: 20px;
+}
+
+.truckMenu {
+	width: 100%;
+	overflow-y: scroll;
+	box-sizing: border-box;
+}
+
+.truckSpecials {
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.truckProfile {
+	margin: 0 auto;
+	text-align: center;
+	width: 105%;
+	height: 80%;
+	overflow-y: scroll;
+}
+
+.truckProfile form {
+	margin-left: 13%;
+}
+
+.truckProfile input {
+	text-align: center;
+	width: 200px;
+	height: 20px;
+}
+
+.truckProfile button {
+	width: 204px;
+	height: 30px;
+	padding: 2px 5px;
+	cursor: pointer;
+	text-align: center;
+	background: linear-gradient(rgba(255,255,255,1), rgba(150,150,150,1));
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+}
+
+.truckProfile > table {
+	width: 60%;
+	margin: 0 auto;
+	table-layout: fixed;
+}
+
+.truckProfile > table td {
+	overflow: hidden;
+}
+
+.adminTruckUserHolder {
+	display: flex;
+	width: 105%;
+	height: 90%;
+	overflow-y: scroll;
+	padding-left: 5px;
+	padding-bottom: 10px;
+	margin: 0 auto;
+	overflow-y: auto;
+}
+
+.adminTruckUserConnectHolder {
+	display: flex;
+	flex-direction: column;
+	width: 105%;
+	height: 90%;
+	overflow-y: scroll;
+	padding-left: 5px;
+	padding-bottom: 10px;
+	margin: 0 auto;
+	overflow-y: auto;
+	pointer-events: none;
+}
+
+.adminTruckUserHolder button {
+	width: 100px;
+	padding: 2px 5px;
+	cursor: pointer;
+	text-align: center;
+	background: linear-gradient(rgba(255,255,255,1), rgba(150,150,150,1));
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+}
+
+.adminTruckUserConnectHolder button {
+	width: 100px;
+	padding: 2px 5px;
+	cursor: pointer;
+	text-align: center;
+	background: linear-gradient(rgba(255,255,255,1), rgba(150,150,150,1));
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgba(0,0,0,0.4);
+}
+
+.adminTruckUserConnectHolder input {
+	text-align: center;
+	width: 150px;
+	height: 20px;
+}
+
+.adminTruckUserHolder > table {
+	width: 100%;
+	margin: 0 auto;
+	table-layout: fixed;
+}
+
+.adminTruckUserConnectHolder > table {
+	width: 90%;
+
+}
+
+.adminTruckUserHolder > table td {
+	height: 50px;
+	overflow: hidden;
+}
+
+.adminTruckUserHolder td:nth-child(1) {
+	width: 10%;
+}
+
+.adminTruckUserHolder td:nth-child(3) {
+	width: 10%;
+}
+
+.objId {
+	flex: 1;
+	border: 1px solid red;
+}
+
+.objName {
+	flex: 2;
+	border: 1px solid red;
+}
+
+.objEnDis {
+	flex: 1;
+	border: 1px solid red;
+}
+
+.objButton {
+	display: flex;
+	flex-direction: column;
+	flex: 2;
+	border: 1px solid red;
+}
+
+.mapContainerHolder {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	flex: 4;
+	margin: 10px;
+	min-width: 300px;
+	overflow: hidden;
+	box-sizing: border-box;
+	background: rgba(230, 230, 230, 1);
+	box-shadow: 4px 4px 4px black;
+	border-radius: 5px;
+}
+
+.mapControls {
+	height: 40px;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	box-sizing: border-box;
+	margin: 10px;
+	border-radius: 5px;
+}
+
+.insideMapControls {
+	margin-left: 10px;
+	box-shadow: 2px 2px 2px black;
+}
+
+.mapContainer {
+	flex: 2;
+	display: flex;
+	padding: 0;
+	overflow: hidden;
+	box-sizing: border-box;
+	box-shadow: 4px 4px 4px black;
+	border-radius: 5px;
+}
+
+.routeDetails {
+	flex: 1;
+}
+
+.footer {
+	min-height: 50px;
+	flex: 1;
+	background: url('images/road-mtn.png');
+	background-size: 100% 100%;
+	background-repeat: no-repeat;
+}
+
+.footer img {
+	position: absolute;
+	width: 50px;
+	height: 50px;
+	bottom: 6px;
+	left: 100%;
+}
+
+.preloader {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	z-index: 10;
+}
+
+.preloader > .preloader-box {
+	position: absolute;
+	width: 345px;
+	height: 30px;
+	top: 50%;
+	left: 50%;
+	margin: -15px 0 0 -150px;
+	-webkit-perspective: 200px;
+}
+
+.preloader .preloader-box > div {
+	position: relative;
+	width: 30px;
+	height: 30px;
+	background: #CCC;
+	float: left;
+	text-align: center;
+	line-height: 30px;
+	font-family: Verdana;
+	font-size: 20px;
+	color: #FFF;
+}
+
+.preloader .preloader-box > div:nth-child(1) {
+	background: #3366FF;
+	margin-right: 15px;
+	border-radius: 5px;
+	-webkit-animation: movement 600ms ease 0ms infinite alternate;
+}
+.preloader .preloader-box > div:nth-child(2) {
+	background: #3366FF;
+	margin-right: 15px;
+	border-radius: 5px;
+	-webkit-animation: movement 600ms ease 75ms infinite alternate;
+}
+.preloader .preloader-box > div:nth-child(3) {
+	background: #3366FF;
+	margin-right: 15px;
+	border-radius: 5px;
+	-webkit-animation: movement 600ms ease 150ms infinite alternate;
+}
+
+.preloader .preloader-box > div:nth-child(4) {
+	background: #3366FF;
+	margin-right: 15px;
+	border-radius: 5px;
+	-webkit-animation: movement 600ms ease 225ms infinite alternate;
+}
+
+.preloader .preloader-box > div:nth-child(5) {
+	background: #3366FF;
+	margin-right: 15px;
+	border-radius: 5px;
+	-webkit-animation: movement 600ms ease 300ms infinite alternate;
+}
+
+.preloader .preloader-box > div:nth-child(6) {
+	background: #3366FF;
+	margin-right: 15px;
+	border-radius: 5px;
+	-webkit-animation: movement 600ms ease 375ms infinite alternate;
+}
+
+.preloader .preloader-box > div:nth-child(7) {
+	background: #3366FF;
+	margin-right: 15px;
+	border-radius: 5px;
+	-webkit-animation: movement 600ms ease 450ms infinite alternate;
+}
+
+.preloader .preloader-box > div:nth-child(8) {
+	background: #3366FF;
+	border-radius: 5px;
+	-webkit-animation: movement 600ms ease 525ms infinite alternate;
+}
+
+@-webkit-keyframes movement {
+	from {
+		-webkit-transform: scale(1.0) translateY(0px) rotateX(0deg);
+		box-shadow: 0 0 0 rgba(0,0,0,0);
+	}
+	to {
+		-webkit-transform: scale(1.5) translateY(-25px) rotateX(45deg);
+		box-shadow: 0 25px 40px rgba(0,0,0,0.4);
+		background: #3399FF;
+	}
+}
+
+.fade.ng-hide {
+  opacity: 0;
+}
+
+.fade.ng-hide-remove,
+.fade.ng-hide-add {
+  display: block !important;
+}
+
+.fade.ng-hide-remove {
+  transition: all linear 2000ms;
+}
+
+.fade.ng-hide-add {
+  transition: all linear 500ms;
+}
+
+/*
+.truckOutline {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	background: url('images/truckParts/outline2.png');
+	background-size: 100% 100%;
+	z-index: 99999;
+	pointer-events: none;
+	transition: all 500ms;
+}
+
+.truckInner {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	z-index: 99998;
+	transition: all 1s;
+}
+
+.firstSlat {
+	height: 20%;
+	background: url('images/truckParts/first-slat.png');
+	background-size: 100% 100%;
+	box-sizing: border-box;
+	background-repeat: no-repeat;
+	z-index: 99998;
+}
+
+.secondSlat {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 20%;
+	background: url('images/truckParts/second-slat.png');
+	background-size: 100% 100%;
+	box-sizing: border-box;
+	background-repeat: no-repeat;
+	z-index: 99998;
+}
+
+.thirdSlat {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 20%;
+	background: url('images/truckParts/third-slat.png');
+	background-size: 100% 100%;
+	box-sizing: border-box;
+	background-repeat: no-repeat;
+	z-index: 99998;
+}
+
+.fourthSlat {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 20%;
+	background: url('images/truckParts/fourth-slat.png');
+	background-size: 100% 100%;
+	box-sizing: border-box;
+	background-repeat: no-repeat;
+	z-index: 99998;
+}
+
+.fifthSlat {
+	height: 20%;
+	background: url('images/truckParts/fifth-slat.png');
+	background-size: 100% 100%;
+	box-sizing: border-box;
+	background-repeat: no-repeat;
+	z-index: 99998;
+}*/
