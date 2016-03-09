@@ -188,6 +188,7 @@ angular.module('truckApp').controller('mainCtrl', function($scope, userService, 
 				}
 				$scope.guestShow = true;
 				$scope.userShow = true;
+				$scope.user = {};
 				$scope.closer();
 			}		
 		});
