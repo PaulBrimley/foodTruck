@@ -197,6 +197,6 @@ app.post('/truck/addSalesAndLocation/:truckId', truckCtrl.addSalesAndLocation)
 app.put('/truck/online/:truckId', truckCtrl.online);
 
 
-http.listen(config.port, function() {
+http.listen(config.port, '67.186.231.1', function() {
 	console.log('You are here at: ', config.port);
 })
