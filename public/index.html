@@ -4,7 +4,7 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 	<title>Where's My Food Truck</title>
 	<link rel="shortcut icon" href="images/white-food-truck-right-icon.png" type="image/png">
-	<script src="https://maps.googleapis.com/maps/api/js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDMui7yhysuA28F7b8huOdD36LaPZzoExY&callback=initMap"></script>
 </head>
 <body ng-controller="mainCtrl">
 	
@@ -88,7 +88,11 @@
 		</div>
 	</div>
 
-
+	<script>
+		function initMap() {
+			console.log('map loaded');
+		}
+	</script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.1/angular.js"></script>
