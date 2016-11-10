@@ -17,6 +17,7 @@ angular.module('truckApp').controller('mainCtrl', function($scope, userService, 
 	$scope.guestShow = false;
 	$scope.mapLoader = true;
 	$scope.errorMessage = '';
+	$scope.googleMapsUrl = "https://maps.googleapis.com/maps/api/js?key=AIzaSyDMui7yhysuA28F7b8huOdD36LaPZzoExY&callback=initMap";
 
 	mapService.getUserLocation();
 	truckService.getOnlineTrucks().then(function(response) {
