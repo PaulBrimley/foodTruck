@@ -60,7 +60,7 @@ function ensureAuthenticated(req, res, next) {
 var app = express();
 
 var http = require('http').Server(app),
-    io = require('socket.io')(http).listen(5000);
+    io = require('socket.io')(80);
 
 app.use(bodyParser.json());
 app.use(cors());
