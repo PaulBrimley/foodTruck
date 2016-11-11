@@ -1,6 +1,6 @@
 angular.module('truckApp').controller('mainCtrl', function($scope, userService, $timeout, $state, mapService, truckService) {
 	
-	var socket = io('http://foodtruck.paulbrimleywebdev.com:9919', {secure:true});
+	var socket = io();
 
 	$scope.onlineTrucks = [];
 	$scope.favoriteTrucks = [];
