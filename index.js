@@ -60,7 +60,7 @@ function ensureAuthenticated(req, res, next) {
 var app = express();
 
 var http = require('http').Server(app),
-    io = require('socket.io')(http);
+    io = require('socket.io').connect('foodtruck.paulbrimleywebdev.com:9919', {secure:true});
 
 app.use(bodyParser.json());
 app.use(cors());
